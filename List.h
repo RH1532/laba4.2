@@ -233,23 +233,23 @@ private:
 		a = b;
 		b = c;
 	}
-	void QuickSort(T* arr, int first, int last)
+	void QuickSort(T* array, int first, int last)
 	{
 		T mid;
 		int f = first, l = last;
-		mid = arr[(f + l) / 2];
+		mid = array[(f + l) / 2];
 		do
 		{
-			while (arr[f] < mid) f++;
-			while (arr[l] > mid) l--;
+			while (array[f] < mid) f++;
+			while (array[l] > mid) l--;
 			if (f <= l)
 			{
-				swap(arr[f], arr[l]);
+				swap(array[f], array[l]);
 				f++;
 				l--;
 			}
 		} while (f < l);
-		if (first < l) QuickSort(arr, first, l);
-		if (f < last) QuickSort(arr, f, last);
+		if (first < l) QuickSort(array, first, l);
+		if (f < last) QuickSort(array, f, last);
 	}
 };
